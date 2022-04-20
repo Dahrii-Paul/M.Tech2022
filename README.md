@@ -8,7 +8,7 @@ To help organizations harness their data and use it to identify new opportunitie
 Examination of data </br>
 To understand their relationships
 
-```
+```R
 # Variables in R
 x=12
 x
