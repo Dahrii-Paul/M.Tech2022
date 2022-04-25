@@ -342,3 +342,46 @@ for (i in 1:15) {
   print(i)
 }
 ```
+# Linear-Regression_R
+
+**linear regression: <br/>** 
+* 1. Use least-squares to fit a line to the data <br/>
+* 2. Calculate R^2 <br/>
+* 3. Calculate a p-value for R^2 <br/>
+ 
+##### Linear Regression: Process of finding a line that best fits the data points available on the plot <br/>
+* *Y = a + bX* <br/>
+* *Y = Y-intercept + Slope.X* <br/>
+* *SS(mean) = (data - mean)^2* <br/>
+* *Variation around the mean = (data-mean)^2 / n*<br/>
+*  *Var(mean) = SS(mean) / n*
+*  predict a quantitative response of Y on the basis of a single predictor variable X. 
+*  It assumes that there is approximately a linear relationship between X and Y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
