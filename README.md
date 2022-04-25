@@ -359,7 +359,10 @@ for (i in 1:15) {
 *  It assumes that there is approximately a linear relationship between X and Y
 
 
-
+```R
+data(package = "MASS")
+library("Mass")
+```
 
 
 
