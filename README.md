@@ -316,8 +316,10 @@ switch (option,
         "median"=print(median(vtr)),
         "min"=print(min(vtr))
 )
+``
 #################################
 # loops repeat
+```R
 x=2
 repeat{
   x=x^2
@@ -342,6 +344,87 @@ for (i in 1:15) {
   print(i)
 }
 ```
+# Data visualization
+```R
+x<-c(1:10)
+y<-c(11,30,16,21,25,26,31,18,33,27)
+length(y)
+#plot graph
+# scatter plot
+plot(x,y)
+#pie
+pie(x,y)
+name_data<-letters[1:10]
+pie(x,name_data)
+#barplot
+barplot(x)
+#boxplot
+boxplot(x)
+#hist
+hist(y)
+?par
+#par()<-accomodate several graph
+#oma<- all side line space 
+par(mfrow=c(2,3), oma=c(2,2,2,2))
+
+#plot 1
+#pch<- plotting character
+plot(x,y, pch=6)
+#dev.off()
+
+#plot 2
+plot(x,y, pch=6, type="o")
+
+#plot3 #color
+plot(x,y, pch=6, type="o",
+    col="red",
+    xlab="height",
+    ylab="weight")
+
+#plot 4 
+plot(x,y, pch=6, type="o",
+     col="red",
+     xlab="height",
+     ylab="weight",
+     sub="H/W")
+#plot 5
+plot(x,y, pch=6, type="o",
+     col="red",
+     xlab="height",
+     ylab="weight",
+     sub="H/W", cex.axis=1.5,
+     cex.lab=1.0)
+
+#plot 6 las-orient
+plot(x,y, pch=6, type="o",
+     col="green",
+     xlab="height",
+     ylab="weight",
+     sub="H/W", cex.axis=1.5,
+     cex.lab=1.0, las=2)
+```
+# Data Handeling
+```R
+getwd()
+setwd("/cloud/project/data")
+sepsis<-read.csv(file="Sepsis.csv", header=T)
+head(sepsis,2)
+colnames(sepsis)
+x<-read.
+delim("clipboard")
+
+sepsis$Shock<-factor(sepsis$Shock,
+                     label=c("no","yes"))
+sepsis$Alcoholism <-factor(sepsis$Alcoholism, 
+                           labels=c("no","yes"))
+sepsis$Infarction <-factor(sepsis$Infarction, 
+                           labels=c("no","yes"))
+head(sepsis)
+sepsis<-sepsis[-1]
+```
+
+
+
 # Linear-Regression_R
 
 **linear regression: <br/>** 
@@ -362,6 +445,42 @@ for (i in 1:15) {
 ```R
 data(package = "MASS")
 library("Mass")
+library(MASS)
+data(package = "MASS")
+data(cats)
+?cats
+dim(cats)
+head(cats)
+class(cats)
+str(cats)
+#extract out male/female from cats datasets
+males<-subset(cats, cats$Sex=="M")
+females<-subset(cats,cats$Sex=="F")
+
+#plot
+plot(males$Bwt,males$Hwt, pch=8,
+     xlab="Bwt",ylab="Hwt",
+     col="green",
+     main="Scatter plot",
+     las=3)
+#Add female
+points(females$Bwt,females$Hwt,pch=8,
+       xlab="Bwt",ylab="Hwt",
+       col="blue",main="Scatter plot",
+       las=3)
+## linear regression analysis
+?lm
+malesReg<-lm(Hwt~Bwt, data=males)
+abline(malesReg, col="red", lwd=2)
+
+femalesReg<-lm(Hwt~Bwt, data=females)
+abline(femalesReg, col="black", lwd=2)
+summary(femalesReg)
+## legend
+legend("bottomright",
+       legend=c("Males cats", "Females cats"),
+       pch=c(8,8),
+       col=c("green","blue"))
 ```
 
 
