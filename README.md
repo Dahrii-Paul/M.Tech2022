@@ -443,32 +443,39 @@ sepsis<-sepsis[-1]
 
 
 ```R
+install.packages("MASS")
 data(package = "MASS")
-library("Mass")
 library(MASS)
-data(package = "MASS")
 data(cats)
 ?cats
 dim(cats)
 head(cats)
 class(cats)
 str(cats)
+
+# "$" operator is used to extract or subset a specific part of a data object in R.
+
 #extract out male/female from cats datasets
 males<-subset(cats, cats$Sex=="M")
 females<-subset(cats,cats$Sex=="F")
 
 #plot
+# "las"
+# "lty" Line type
+# "las" labels are parallel (=0) or perpendicular(=2) to axis
+# "lwd" Specifies the line width
+# "pch" 
 plot(males$Bwt,males$Hwt, pch=8,
      xlab="Bwt",ylab="Hwt",
      col="green",
      main="Scatter plot",
-     las=3)
+     las=2)
 #Add female
 points(females$Bwt,females$Hwt,pch=8,
        xlab="Bwt",ylab="Hwt",
        col="blue",main="Scatter plot",
-       las=3)
-## linear regression analysis
+       las=2)
+## simple linear regression analysis
 ?lm
 malesReg<-lm(Hwt~Bwt, data=males)
 abline(malesReg, col="red", lwd=2)
@@ -481,7 +488,7 @@ legend("bottomright",
        legend=c("Males cats", "Females cats"),
        pch=c(8,8),
        col=c("green","blue"))
-```
+
 
 
 
