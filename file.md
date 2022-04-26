@@ -1,4 +1,6 @@
 # File handling
+
+```R
 getwd()
 setwd("/cloud/project/data")
 sepsis<-read.csv(file="Sepsis.csv", header=T)
@@ -15,3 +17,4 @@ sepsis$Infarction <-factor(sepsis$Infarction,
                            labels=c("no","yes"))
 head(sepsis)
 sepsis<-sepsis[-1]
+```
