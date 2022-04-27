@@ -22,6 +22,8 @@ hist(y)
 ####  "lwd" Specifies the line width
 ####  "pch" 
 #### "par" accomodate several graph
+#### "cex" number indicating the amount by which plotting text and symbols should be scaled </br>
+     relative to the default. 1=default, 1.5 is 50% larger, 0.5 is 50% smaller, etc.
 ```R
 ?par
 #par()<-accomodate several graph
