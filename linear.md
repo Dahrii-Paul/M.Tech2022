@@ -26,6 +26,30 @@ multiple.regression <- lm(size ~ weight + height, data=mouse.data)
 summary(multiple.regression)
 
 ```
+## Regression function
+```R
+x=c(1:10)
+y=c(12,22,20,25,30,29,34,40,50,52)
+regression=function(x,y){
+  x1=x-mean(x)
+  y1=y-mean(y)
+  #y=a+bx
+  slope=sum((x1*y1))/sum((x1*x1))
+  #b=sum((x1*y1))/sum((x1*x1))
+  intercept=mean(y)-(slope*mean(x))
+  results=as.data.frame(c())
+  results[1,1]=intercept
+  results[1,2]=slope
+  names(results)=c("intercept","slope")
+  return(results)
+}
+regression(x,y)
+lm(y~x)
+rm(list=ls())
+```
+
+
+
 ## Regression (MASS)
 ```R
 install.packages("MASS")
