@@ -45,4 +45,12 @@ corrplot(corr_expr, order = 'hclust', addrect = 4)
 corrplot(corr_expr, method="pie")
 palette = colorRampPalette(c("green", "white", "red")) (20)
 heatmap(x = corr_expr, col = palette, symm = TRUE)
+
+corrplot(corr_expr, type="upper", order="hclust", 
+         p.mat = p_value, sig.level = 0.01)
+
+corrplot(corr_expr, type="upper", order="hclust", 
+         p.mat = p_value, sig.level = 0.01,insig = "blank" )
+corrplot(corr_expr, type="full", order="hclust", 
+         p.mat = p_value, sig.level = 0.01,insig = "blank" )
 ```
